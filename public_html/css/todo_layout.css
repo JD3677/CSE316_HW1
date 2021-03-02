@@ -1,0 +1,124 @@
+#grid-container {
+    position:absolute;
+    width:100%;
+    height:100%;
+    display: grid;
+    padding: 1px;
+    grid-template-rows: 5% 95%;
+    grid-template-columns: 12% 88%;
+}
+
+#navbar {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+
+#left-sidebar {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#left-sidebar-header {
+    grid-template-columns: 60% 40%;
+    height: 50px;
+    font-weight: 700;
+}
+
+
+#left-sidebar-controls {
+    text-align: right;
+}
+
+#workspace {
+    grid-column: 2 span 1;
+    grid-row: 2 span 1;
+    display: flex;
+    flex-direction: column;
+    line-height:50px;
+}
+
+#todo-list-items-div{
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+.list-item-card {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.list-header-card {
+    border-bottom: dotted;
+}
+
+.task-col {
+    width:25%;
+}
+
+.due-date-col {
+    width:25%;
+}
+
+.status-col {
+    width:25%;
+}
+
+.list-controls-col {
+    width:25%;
+    display: flex;
+    flex-direction: row;
+}
+
+.list-item-control {
+    width: 20%;
+}
+
+.overlay-item{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: tanslate(-50%, -50%) scale(0);
+    border-radius:5px;
+    z-index: 10;
+    width: 250px;
+    height: 100px;
+    max-width: 60%;
+}
+
+.overlay-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dotted white;
+}
+
+.overlay-body{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+#active.overlay{
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    pointer-events: all;
+}
