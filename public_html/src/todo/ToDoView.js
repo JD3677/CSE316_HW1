@@ -196,8 +196,10 @@ export default class ToDoView {
         document.getElementById("delete-list-button").style.color = "white";
         document.getElementById("close-list-button").style.color = "white";
 
-        document.getElementById("redo-button").style.color = "#353a44";
-        document.getElementById("undo-button").style.color = "#353a44";
+        //close item button
+        document.getElementById("close-list-button").onmousedown = function(){
+            currentModel.closeCurrentList();
+        }
     }
 
     // THE VIEW NEEDS THE CONTROLLER TO PROVIDE PROPER RESPONSES

@@ -139,6 +139,9 @@ export default class ToDoModel {
             document.getElementById("todo-list-" + listToLoad.id).style.color = "#f5bc75";
             this.view.viewList(this.currentList);
         }
+
+        document.getElementById("redo-button").style.color = "#353a44";
+        document.getElementById("undo-button").style.color = "#353a44";
     }
 
     /**
@@ -168,6 +171,9 @@ export default class ToDoModel {
         document.getElementById("delete-list-button").style.color = "#353a44";
         document.getElementById("close-list-button").style.color = "#353a44";
 
+        document.getElementById("redo-button").style.color = "#353a44";
+        document.getElementById("undo-button").style.color = "#353a44";
+
         let indexOfList = -1;
         for (let i = 0; (i < this.toDoLists.length) && (indexOfList < 0); i++) {
             if (this.toDoLists[i].id === this.currentList.id) {
@@ -175,6 +181,20 @@ export default class ToDoModel {
             }
         }
         this.toDoLists.splice(indexOfList, 1);
+        this.currentList = null;
+        this.view.clearItemsList();
+        this.view.refreshLists(this.toDoLists);
+    }
+
+    closeCurrentList(){
+        document.getElementById("add-item-button").onmousedown = function() {}
+        document.getElementById("add-item-button").style.color = "#353a44";
+        document.getElementById("delete-list-button").onmousedown = function() {}
+        document.getElementById("delete-list-button").style.color = "#353a44";
+        document.getElementById("close-list-button").style.color = "#353a44";
+
+        document.getElementById("redo-button").style.color = "#353a44";
+        document.getElementById("undo-button").style.color = "#353a44";
         this.currentList = null;
         this.view.clearItemsList();
         this.view.refreshLists(this.toDoLists);

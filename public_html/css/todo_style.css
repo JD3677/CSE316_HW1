@@ -113,3 +113,7 @@
 ::-webkit-scrollbar-thumb{
     background: #747373;
   }
+
+#todo-list-item-card{
+    background: #353a44;
+}
