@@ -196,26 +196,8 @@ export default class ToDoView {
         document.getElementById("delete-list-button").style.color = "white";
         document.getElementById("close-list-button").style.color = "white";
 
-        //UNDOTODO========================================================
-
-        /**
-         * let currentModel = this.controller.model;
-        if(this.controller.model.tps.hasTransactionToRedo()){
-            document.getElementById("redo-button").onmousedown = function() {currentModel.redo();}
-            document.getElementById("redo-button").style.color = "white";
-        }else{
-            document.getElementById("redo-button").onmousedown = function() {}
-            document.getElementById("redo-button").style.color = "#353a44";
-        }
-
-        if(this.controller.model.tps.hasTransactionToUndo()){
-            document.getElementById("undo-button").onmousedown = function() {currentModel.undo();}
-            document.getElementById("undo-button").style.color = "white";
-        }else{
-            document.getElementById("undo-button").onmousedown = function() {}
-            document.getElementById("undo-button").style.color = "#353a44";
-        }
-         */
+        document.getElementById("redo-button").style.color = "#353a44";
+        document.getElementById("undo-button").style.color = "#353a44";
     }
 
     // THE VIEW NEEDS THE CONTROLLER TO PROVIDE PROPER RESPONSES

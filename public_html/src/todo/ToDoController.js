@@ -36,6 +36,9 @@ export default class ToDoController {
 
 
         document.getElementById("close-list-button").style.color = "#353a44";
+
+        document.getElementById("redo-button").style.color = "#353a44";
+        document.getElementById("undo-button").style.color = "#353a44";
     }
     
     // PROVIDES THE RESPONSE TO WHEN A USER CLICKS ON A LIST TO LOAD

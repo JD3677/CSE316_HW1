@@ -104,3 +104,12 @@
     overflow-y: scroll;
     height: 90%;
 }
+
+::-webkit-scrollbar{
+    background: #353a44;
+    width: 7px;
+  }
+  
+::-webkit-scrollbar-thumb{
+    background: #747373;
+  }

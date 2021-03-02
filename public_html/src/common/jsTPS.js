@@ -135,8 +135,7 @@ export default class jsTPS {
      */
     addTransaction(transaction) {
         // ARE WE BRANCHING?
-        if ((this.mostRecentTransaction < 0) 
-            || (this.mostRecentTransaction < (this.transactions.length - 1))) {
+        if ((this.mostRecentTransaction < 0) || (this.mostRecentTransaction < (this.transactions.length - 1))) {
                 for (let i = this.transactions.length - 1; i > this.mostRecentTransaction; i--) {
                     this.transactions.splice(i, 1);
                 }
@@ -168,6 +167,7 @@ export default class jsTPS {
             this.mostRecentTransaction++;
             this.performingDo = false;
         }
+        this.checkAvi();
     }
 
     /**
@@ -181,6 +181,25 @@ export default class jsTPS {
             transaction.undoTransaction();
             this.mostRecentTransaction--;
             this.performingUndo = false;
+        }
+        this.checkAvi();
+    }
+
+    /**
+     * This function check if there are any transaction to redo/ undo and
+     * change the related icons color
+     */
+    checkAvi(){
+        if(this.hasTransactionToRedo()){
+            document.getElementById("redo-button").style.color = "white";
+        }else{
+            document.getElementById("redo-button").style.color = "#353a44";
+        }
+
+        if(this.hasTransactionToUndo()){
+            document.getElementById("undo-button").style.color = "white";
+        }else{
+            document.getElementById("undo-button").style.color = "#353a44";
         }
     }
 
